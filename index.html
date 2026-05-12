@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Aurelia 💛</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background: linear-gradient(180deg,#fff8f8,#fff6d8);
+      overflow-x:hidden;
+      color:#5b4b4b;
+    }
+
+    section{
+      min-height:100vh;
+      padding:40px 20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    /* Floating Hearts */
+    .heart{
+      position:fixed;
+      bottom:-20px;
+      color:#ff8fb1;
+      animation:float 8s linear infinite;
+      z-index:1;
+      opacity:0.6;
+      font-size:20px;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:0.6;
+      }
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    /* Opening */
+    .opening{
+      text-align:center;
+      z-index:2;
+    }
+
+    .terminal{
+      background:#1e1e1e;
+      color:#7CFC00;
+      padding:20px;
+      border-radius:20px;
+      width:90%;
+      max-width:500px;
+      text-align:left;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom:30px;
+    }
+
+    .typing{
+    overflow:hidden;
+    border-right:2px solid #7CFC00;
+    animation:
+    typing 4s steps(40,end) forwards,
+    blink .8s infinite;
+    white-space: normal;
+    word-break: break-word;
+    }
+
+    @keyframes typing{
+      from{
+        max-width:0;
+    }
+    to{
+    max-width:100%;
+    }
+  }
+
+    @keyframes blink{
+      50%{border-color:transparent}
+    }
+
+    .open-btn{
+      background:linear-gradient(135deg,#f7b6d2,#ffe28a);
+      border:none;
+      padding:15px 30px;
+      border-radius:50px;
+      font-size:16px;
+      color:#fff;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow:0 10px 20px rgba(0,0,0,0.1);
+      transition:.3s;
+    }
+
+    .open-btn:hover{
+      transform:scale(1.05);
+    }
+
+    /* Title */
+    .title{
+      font-size:42px;
+      text-align:center;
+      color:#ff7aa2;
+      margin-bottom:20px;
+      font-family:'Caveat',cursive;
+    }
+
+    .subtitle{
+      text-align:center;
+      max-width:700px;
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* Memory Cards */
+    .memory-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      width:100%;
+      max-width:1100px;
+      margin-top:40px;
+    }
+
+    .memory-card{
+      background:#fff;
+      padding:15px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:.3s;
+    }
+
+    .memory-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .memory-card img{
+      width:100%;
+      border-radius:20px;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .caption{
+      margin-top:15px;
+      text-align:center;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    /* Letter */
+    .letter-box{
+      background:rgba(255,255,255,0.8);
+      backdrop-filter:blur(10px);
+      padding:30px;
+      border-radius:30px;
+      max-width:800px;
+      line-height:2;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      font-size:20px;
+      font-family:'Caveat',cursive;
+    }
+
+    /* Code */
+    .code-box{
+      background:#1e1e1e;
+      color:#f8f8f2;
+      padding:25px;
+      border-radius:25px;
+      width:90%;
+      max-width:700px;
+      overflow:auto;
+      margin-top:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    pre{
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    /* Ending */
+    .ending{
+      text-align:center;
+    }
+
+    .ending h1{
+      font-size:60px;
+      color:#ff7aa2;
+      font-family:'Caveat',cursive;
+      margin-bottom:20px;
+    }
+
+    .ending p{
+      font-size:20px;
+    }
+
+    .music-note{
+      margin-top:20px;
+      font-size:14px;
+      opacity:0.7;
+    }
+
+    @media(max-width:768px){
+      .title{
+        font-size:34px;
+      }
+
+      .letter-box{
+        font-size:18px;
+      }
+
+      .ending h1{
+        font-size:45px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts -->
+  <script>
+    function createHeart(){
+      const heart=document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML='💖';
+      heart.style.left=Math.random()*100+'vw';
+      heart.style.fontSize=Math.random()*20+15+'px';
+      heart.style.animationDuration=Math.random()*5+5+'s';
+      document.body.appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },10000);
+    }
+
+    setInterval(createHeart,500);
+  </script>
+
+  <!-- Opening -->
+  <section>
+    <div class="opening">
+      <div class="terminal">
+        <p class="typing">
+          Initializing birthday_letter.exe for Aurelia Diningtyas...
+        </p>
+      </div>
+
+      <button class="open-btn" onclick="document.getElementById('home').scrollIntoView()">
+        Open Aurelia's Birthday Letter 💛
+      </button>
+    </div>
+  </section>
+
+  <!-- Home -->
+  <section id="home">
+    <h1 class="title">Happy Birthday Aurelia 💛</h1>
+
+    <p class="subtitle">
+      21 Mei 2026 — hari dimana seseorang yang sangat spesial dilahirkan ke dunia.
+      Terima kasih karena sudah hadir di hidup aku, menjadi tempat pulang,
+      tempat cerita, dan seseorang yang selalu berhasil bikin hari-hari aku terasa lebih hangat.
+    </p>
+  </section>
+
+  <!-- Memories -->
+  <section>
+    <h1 class="title">Our Memories 📸</h1>
+
+    <div class="memory-container">
+
+      <div class="memory-card">
+        <img src="foto1.jpg" alt="">
+        <div class="caption">
+          Pertama kalinya kita foto bareng waktu ngedate. Kita pergi ke Miniso, dan ayang sibuk pilih-pilih barang lucu sambil beliin beberapa hal. Aku sampai lupa waktu itu beli apa aja, tapi yang aku inget jelas adalah betapa senangnya aku bisa jalan bareng kamu hari itu.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto2.jpg" alt="">
+        <div class="caption">
+          Pertama kalinya aku datang ke rumah ayang buat nemenin sekaligus bantu ayang ngerjain pesanan buket bunga. Walaupun sebenarnya aku lebih banyak bantu “lihat-lihat” aja hehe, tapi rasanya hangat banget bisa ada di dekat kamu sambil nemenin kamu sibuk.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto3.jpg" alt="">
+        <div class="caption">
+          Pertama kalinya kita nonton bioskop bareng. Kita nonton Zootopia 2, dan ayang yang ngenalin aku sama film itu. Ternyata aku suka banget, mungkin karena nontonnya sama orang yang tepat juga.
+        </div>
+      </div>
+      <div class="memory-card">
+        <img src="foto4.jpg" alt="">
+        <div class="caption">
+          Kita lagi beli basreng leukohnya King Abdi. Punyamu rasa chili oil, sedangkan punyaku pakai bumbu tabur yang ternyata asin banget sampai sekarang masih lucu kalau diinget wkwkwk.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto5.jpg" alt="">
+        <div class="caption">
+          Kita lagi jajan sosis jontor yang menurutku pedes banget. Kita makan bareng di pendopo di warung temen kamu sambil ngobrol santai, dan entah kenapa momen sederhana kayak gitu selalu jadi kenangan manis buat aku.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto6.jpg" alt="">
+        <div class="caption">
+          Ayang traktir aku minuman matcha. Kita duduk bareng di taman GA sambil minum dan cerita banyak hal. Sesederhana itu, tapi rasanya nyaman banget.
+        </div>
+      </div>
+      <div class="memory-card">
+        <img src="foto7.jpg" alt="">
+        <div class="caption">
+          Kita lagi nyeblak bareng di Teh Risa. Punyaku porsinya banyak banget sampai kayak porsi dinasti, sedangkan punyamu nggak terlalu pedes dan belinya dikit hehe. Tapi justru hal-hal kecil kayak gini yang selalu bikin aku senang kalau lagi sama kamu.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto8.jpg" alt="">
+        <div class="caption">
+          Kamu habis nempelin stiker kuku ke kukuku setelah kita dari Momoyo dan stikernya sangat lama bertahan di kukuku. Hal kecil yang mungkin sederhana, tapi buat aku tetap jadi momen lucu dan manis yang selalu aku inget.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto9.jpg" alt="">
+        <div class="caption">
+          Kita lagi beli es krim di Momoyo. Punyamu rasa vanila, punyaku coklat, dan kamu kelihatan seneng banget waktu makan es krimnya. Lucu banget lihat ekspresi kamu waktu itu.
+        </div>
+      </div>
+      <div class="memory-card">
+        <img src="foto10.jpg" alt="">
+        <div class="caption">
+          Ayang mau pergi ke Malang nyamperin Selfi. Jujur waktu itu aku sedih banget karena harus ditinggal dulu, rasanya sepi banget huuu.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto11.jpg" alt="">
+        <div class="caption">
+          Pertama kalinya ayang duduk cukup lama di rumah dan pertama kali juga ketemu ibuk. Aku senang banget waktu itu, rasanya seperti kamu mulai jadi bagian dari rumah dan hidup aku.
+        </div>
+      </div>
+
+      <div class="memory-card">
+        <img src="foto12.jpg" alt="">
+        <div class="caption">
+          Ayang lagi traktir aku es krim rasa taro di Mixue. Makasih yaa ayang, bukan cuma karena es krimnya, tapi karena selalu ada banyak hal kecil dari kamu yang bikin aku merasa disayang
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Letter -->
+  <section>
+    <h1 class="title">Letter For You 💌</h1>
+
+    <div class="letter-box">
+      Hai Aureliaa,
+
+      selamat ulang tahun yaa sayangg 💛
+
+      Aku mungkin bukan orang yang paling sempurna di hidup kamu,
+      tapi aku selalu bersyukur karena dipertemukan sama kamu.
+      Makasih udah bertahan sejauh ini,
+      makasih udah selalu ada,
+      dan makasih karena berhasil jadi rumah paling nyaman buat aku.
+
+      Aku harap di umur kamu yang sekarang,
+      semua hal baik datang satu per satu ke hidup kamu.
+      Aku harap kamu selalu bahagia,
+      selalu sehat,
+      dan semua mimpi kamu bisa tercapai.
+
+      Kalau suatu saat dunia bikin kamu capek,
+      ingat yaa...
+      aku bakal selalu ada buat kamu.
+
+      I love you,
+      more than words can explain 💛
+    </div>
+  </section>
+
+  <!-- Programmer Love -->
+  <section>
+    <h1 class="title">From a Programmer 👨‍💻</h1>
+
+    <div class="code-box">
+<pre>
+while (myHeart.beats()) {
+    loveForAurelia++;
+}
+
+if (Aurelia.sad) {
+    hug();
+    stay();
+    listen();
+}
+
+const future = {
+    together: true,
+    happiness: Infinity,
+    love: "forever"
+};
+
+console.log("Happy Birthday Aurelia 💛");
+</pre>
+    </div>
+  </section>
+
+  <!-- Ending -->
+  <section>
+    <div class="ending">
+      <h1>I Love You 💖</h1>
+
+      <p>
+        Thank you for being born, Aurelia Diningtyas.
+      </p>
+
+      <div class="music-note">
+        <audio id="bg-music" autoplay loop>
+          <source src="lagu.mp3" type="audio/mp3">
+        </audio>
+        <script>
+          document.addEventListener('click', function () {
+          document.getElementById('bg-music').play();
+          }, { once: true });
+        </script>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
