@@ -235,7 +235,105 @@
         font-size:45px;
       }
     }
+    .reasons-container,
+.little-container,
+.open-container,
+.messages-container{
+  width:100%;
+  max-width:1100px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
 
+.reason-card,
+.little-card,
+.open-card,
+.message-card{
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  line-height:1.8;
+  transition:.3s;
+}
+
+.reason-card:hover,
+.little-card:hover,
+.open-card:hover,
+.message-card:hover{
+  transform:translateY(-5px);
+}
+
+.timeline{
+  margin-top:40px;
+  width:100%;
+  max-width:700px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.timeline-item{
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  line-height:1.8;
+}
+
+.future-box{
+  max-width:800px;
+  background:rgba(255,255,255,0.8);
+  padding:30px;
+  border-radius:30px;
+  line-height:2;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  font-family:'Caveat',cursive;
+  font-size:28px;
+  margin-top:30px;
+}
+.open-container{
+  width:100%;
+  max-width:900px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  margin-top:40px;
+}
+
+.open-card{
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(10px);
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.open-card:hover{
+  transform:translateY(-5px);
+}
+
+.open-card h3{
+  color:#ff7aa2;
+}
+
+.open-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s ease;
+  line-height:1.9;
+  margin-top:0;
+}
+
+.open-card.active .open-content{
+  max-height:300px;
+  margin-top:20px;
+}
   </style>
 </head>
 <body>
@@ -334,7 +432,7 @@
       <div class="memory-card">
         <img src="foto7.jpg" alt="">
         <div class="caption">
-          Kita lagi nyeblak bareng di Teh Risa. Punyaku porsinya banyak banget sampai kayak porsi dinasti, sedangkan punyamu nggak terlalu pedes dan belinya dikit hehe. Tapi justru hal-hal kecil kayak gini yang selalu bikin aku senang kalau lagi sama kamu.
+          Kita lagi nyeblak bareng di Teh Risa. Punyaku porsinya banyak banget sampai kayak porsi dinasti, sedangkan punyamu ga terlalu pedes dan belinya dikit hehe. Tapi justru hal-hal kecil kayak gini yang selalu bikin aku senang kalau lagi sama kamu.
         </div>
       </div>
 
@@ -374,35 +472,395 @@
 
     </div>
   </section>
+  <!-- ========================= -->
+<!-- LETAKKAN SETELAH SECTION "Our Memories 📸" -->
+<!-- ========================= -->
 
+<section id="reasons">
+  <h1 class="title">Reasons Why I Love You 💖</h1>
+
+  <div class="reasons-container">
+
+    <div class="reason-card">
+      Aku suka cara kamu selalu berusaha kuat meskipun sebenarnya capek.
+    </div>
+
+    <div class="reason-card">
+      Aku suka senyum kamu yang selalu bikin hati aku tenang.
+    </div>
+
+    <div class="reason-card">
+      Aku suka cara kamu cerita hal kecil dengan penuh semangat.
+    </div>
+
+    <div class="reason-card">
+      Aku suka karena kamu selalu bikin aku merasa dicintai.
+    </div>
+
+    <div class="reason-card">
+      Aku suka semua hal kecil tentang kamu yang bahkan mungkin kamu ga sadar.
+    </div>
+
+    <div class="reason-card">
+      Aku suka karena rumah paling nyaman buat aku adalah kamu.
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= -->
+<!-- LETAKKAN SETELAH SECTION "Reasons Why I Love You" -->
+<!-- ========================= -->
+
+<section id="timeline">
+
+  <h1 class="title">Our Journey Together 🕰️</h1>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      💌 Pertama kali kita mulai dekat dan ngobrol panjang.
+    </div>
+
+    <div class="timeline-item">
+      📸 Pertama kali kita foto bareng waktu ngedate.
+    </div>
+
+    <div class="timeline-item">
+      🎬 Pertama kali nonton bioskop bareng.
+    </div>
+
+    <div class="timeline-item">
+      🏠 Pertama kali aku datang ke rumah ayang.
+    </div>
+
+    <div class="timeline-item">
+      🍜 Seblak date, jajan random, dan semua momen kecil kita.
+    </div>
+
+    <div class="timeline-item">
+      🎂 Hari ulang tahun ayang yang spesial ini 💛
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LETAKKAN SETELAH SECTION TIMELINE -->
+<!-- ========================= -->
+
+<section id="little-things">
+
+  <h1 class="title">Little Things About You 🌷</h1>
+
+  <div class="little-container">
+
+    <div class="little-card">
+      Cara kamu ketawa kalau lagi seneng lucu banget.
+    </div>
+
+    <div class="little-card">
+      Cara kamu marah kadang bikin gemes.
+    </div>
+
+    <div class="little-card">
+      Cara kamu excited waktu cerita sesuatu selalu bikin aku senyum sendiri.
+    </div>
+
+    <div class="little-card">
+      Cara kamu perhatian sama hal kecil bikin aku nyaman banget.
+    </div>
+
+    <div class="little-card">
+      Aku suka semua versi diri kamu, bahkan saat kamu lagi capek sekalipun.
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LETAKKAN SETELAH SECTION LITTLE THINGS -->
+<!-- ========================= -->
+
+<section id="open-when">
+
+  <h1 class="title">Open When... 💌</h1>
+
+  <div class="open-container">
+
+    <!-- CARD 1 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You're Sad 🌧️</h3>
+
+      <div class="open-content">
+
+        Kalau dunia lagi terasa berat buat ayang,
+        aku harap ayang jangan nyimpen semuanya sendirian yaa.
+
+        Aku tahu kadang hidup capek,
+        kadang banyak hal yang bikin sedih,
+        kecewa,
+        atau bahkan bikin ayang ngerasa ga baik-baik aja.
+
+        Tapi aku mau ayang ingat satu hal,
+        ayang ga pernah sendirian.
+
+        Ada aku yang bakal selalu ada buat ayang.
+        Mungkin aku ga selalu bisa langsung memperbaiki semuanya,
+        tapi aku bakal selalu berusaha buat nemenin ayang sampai ayang merasa lebih tenang.
+
+        Jadi kalau ayang lagi sedih,
+        peluk semua kata-kata ini baik-baik yaa 💛
+
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You Miss Me 🫂</h3>
+
+      <div class="open-content">
+
+        Kalau ayang lagi kangen aku,
+        coba ingat semua hal kecil yang pernah kita lewati bareng.
+
+        Ingat semua cerita random kita,
+        semua jalan-jalan kecil kita,
+        semua tawa,
+        semua foto,
+        dan semua kenangan sederhana yang selalu berhasil bikin kita bahagia.
+
+        Aku tahu kadang rasa kangen itu ga enak,
+        apalagi kalau lagi ga bisa ketemu.
+
+        Tapi sejauh apa pun jaraknya,
+        hati aku bakal selalu dekat sama ayang.
+
+        Dan jujur aja,
+        aku juga selalu kangen ayang 💛
+
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You're Tired 🌙</h3>
+
+      <div class="open-content">
+
+        Terima kasih yaa karena selama ini udah bertahan sejauh ini.
+
+        Aku tahu ayang sering capek,
+        banyak pikiran,
+        banyak hal yang harus dihadapi,
+        dan kadang semuanya terasa berat banget.
+
+        Tapi meskipun begitu,
+        ayang tetap jalan sampai sekarang.
+        Dan itu hal yang hebat banget.
+
+        Aku bangga sama ayang.
+        Bangga karena ayang tetap kuat,
+        tetap berusaha,
+        dan tetap bertahan meskipun keadaan ga selalu mudah.
+
+        Jadi kalau ayang lagi lelah,
+        istirahat sebentar ga apa-apa yaa.
+        Aku bakal tetap ada di samping ayang 💛
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You Feel Insecure 🤍</h3>
+
+      <div class="open-content">
+
+        Aku harap ayang jangan pernah ngerasa kurang yaa.
+
+        Karena buat aku,
+        ayang itu cantik,
+        spesial,
+        dan sangat berharga.
+
+        Aku suka cara ayang ketawa,
+        cara ayang cerita,
+        cara ayang peduli sama orang lain,
+        dan semua hal kecil tentang ayang yang mungkin bahkan ayang sendiri ga sadar.
+
+        Jadi jangan terlalu keras sama diri sendiri yaa cintaa.
+
+        Karena di mata aku,
+        ayang selalu punya tempat spesial yang ga bisa diganti siapa pun 💛
+
+      </div>
+
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You Need Reassurance 💖</h3>
+
+      <div class="open-content">
+
+        Aku mungkin bukan orang paling sempurna,
+        dan aku mungkin masih banyak kurangnya.
+
+        Tapi satu hal yang selalu pasti:
+        aku sayang banget sama ayang.
+
+        Terima kasih karena udah bertahan sama aku sampai sejauh ini.
+        Terima kasih karena selalu berusaha ngerti aku,
+        selalu ada,
+        dan selalu bikin aku merasa punya rumah.
+
+        Aku ga tahu masa depan bakal seperti apa,
+        tapi selama aku masih bisa,
+        aku bakal terus berusaha buat tetap ada di samping ayang.
+
+        Jadi kalau suatu saat ayang ragu,
+        baca ini lagi yaa 💛
+
+      </div>
+
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="open-card" onclick="toggleLetter(this)">
+
+      <h3>Open When You Want To Smile ☀️</h3>
+
+      <div class="open-content">
+
+        Kalau ayang lagi pengen senyum,
+        coba lihat lagi semua kenangan kita.
+
+        Semua foto,
+        semua cerita random,
+        semua makanan yang pernah kita makan bareng,
+        semua jalan-jalan kecil kita,
+        dan semua momen sederhana yang ternyata sekarang jadi kenangan manis.
+
+        Aku harap semua hal kecil itu bisa bikin ayang senyum lagi.
+
+        Karena jujur,
+        salah satu hal favorit aku di dunia ini adalah lihat ayang bahagia 💛
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LETAKKAN SETELAH SECTION OPEN WHEN -->
+<!-- ========================= -->
+
+<section id="future">
+
+  <h1 class="title">Future With You ✨</h1>
+
+  <div class="future-box">
+
+    Aku ga tahu masa depan bakal seperti apa,
+    tapi aku harap nanti masih ada kita di dalamnya.
+
+    Aku masih pengen banyak hal sama ayang.
+    Masih pengen jalan bareng lagi,
+    makan random lagi,
+    ketawa bareng lagi,
+    dan bikin lebih banyak kenangan kecil sama ayang.
+
+    Aku harap semua hal baik datang ke hidup ayang.
+    Aku pengen lihat ayang bahagia,
+    sukses,
+    sehat,
+    dan selalu dikelilingi orang yang sayang sama ayang.
+
+    Dan semoga,
+    kalau memang diperbolehkan,
+    aku bisa terus jadi salah satu orang yang nemenin ayang sampai nanti 💛
+
+  </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- LETAKKAN SEBELUM SECTION ENDING -->
+<!-- ========================= -->
+
+<section id="21-messages">
+
+  <h1 class="title">21 Messages For Aurelia 💛</h1>
+
+  <div class="messages-container">
+
+    <div class="message-card">1. Makasih udah lahir.</div>
+    <div class="message-card">2. Makasih udah hadir di hidup aku.</div>
+    <div class="message-card">3. Makasih udah bertahan sejauh ini.</div>
+    <div class="message-card">4. Aku bangga sama kamu.</div>
+    <div class="message-card">5. Aku suka senyum kamu.</div>
+    <div class="message-card">6. Aku suka semua hal kecil tentang kamu.</div>
+    <div class="message-card">7. Kamu cantik banget.</div>
+    <div class="message-card">8. Kamu selalu berhasil bikin aku nyaman.</div>
+    <div class="message-card">9. Jangan terlalu keras sama diri sendiri yaa.</div>
+    <div class="message-card">10. Kamu berharga banget.</div>
+    <div class="message-card">11. Aku senang bisa kenal kamu.</div>
+    <div class="message-card">12. Aku senang punya kamu.</div>
+    <div class="message-card">13. Kamu rumah paling nyaman buat aku.</div>
+    <div class="message-card">14. Aku suka semua kenangan kita.</div>
+    <div class="message-card">15. Aku harap kamu selalu sehat.</div>
+    <div class="message-card">16. Aku harap semua mimpi kamu tercapai.</div>
+    <div class="message-card">17. Jangan lupa bahagia yaa.</div>
+    <div class="message-card">18. Aku bakal selalu dukung kamu.</div>
+    <div class="message-card">19. Terima kasih untuk semuanya.</div>
+    <div class="message-card">20. I love you so much.</div>
+    <div class="message-card">21. Happy Birthday Aurelia Diningtyas 💖</div>
+
+  </div>
+
+</section>
   <!-- Letter -->
   <section>
     <h1 class="title">Letter For You 💌</h1>
 
     <div class="letter-box">
-      Hai Aureliaa,
 
-      selamat ulang tahun yaa sayangg 💛
+Hai Aureliaa,<br>
 
-      Aku mungkin bukan orang yang paling sempurna di hidup kamu,
-      tapi aku selalu bersyukur karena dipertemukan sama kamu.
-      Makasih udah bertahan sejauh ini,
-      makasih udah selalu ada,
-      dan makasih karena berhasil jadi rumah paling nyaman buat aku.
+selamat ulang tahun yaa sayangg 💛<br><br>
 
-      Aku harap di umur kamu yang sekarang,
-      semua hal baik datang satu per satu ke hidup kamu.
-      Aku harap kamu selalu bahagia,
-      selalu sehat,
-      dan semua mimpi kamu bisa tercapai.
+Aku mungkin bukan orang yang paling sempurna, tapi aku selalu bersyukur karena dipertemukan sama ayang. Makasih udah bertahan sejauh ini, makasih udah selalu ada, dan makasih karena berhasil jadi rumah paling nyaman buat aku.
+Aku ganyangka kalo ada seseorang yang bisa punya pengaruh sebesar itu dalam hidup aku. Dari yang awalnya cuma ngobrol biasa, sampai sekarang jadi orang yang paling sering aku pikirin setiap hari.
+Kadang aku suka mikir, dari banyaknya orang di dunia ini, kenapa aku bisa seberuntung itu dipertemukan sama kamu.
+Terima kasih yaa ayang, karena selama ini udah selalu ada. Makasih udah mau bertahan sama aku, makasih udah sabar sama sifat aku, dan makasih karena selalu bikin aku merasa punya tempat pulang.
+Aku tahu hubungan kita ga selalu sempurna. Kadang ada yang salah paham, ada capeknya, ada sedihnya juga. Tapi aku senang karena sejauh ini kita masih sama-sama bertahan dan belajar buat saling mengerti.
+Semua hal kecil sama ayang selalu jadi kenangan yang berharga buat aku. Dari jalan-jalan kecil kita, jajan random, ngobrol sampai larut, sampai momen sederhana yang mungkin orang lain anggap biasa, semuanya selalu terasa spesial kalau sama kamu.
+Aku juga senang karena ayang selalu berhasil bikin hari-hari aku terasa lebih hangat. Bahkan di saat aku capek atau lagi banyak pikiran, kehadiran ayang selalu berhasil bikin aku tenang.
+Aku cuma berharap semoga di umur ayang yang sekarang, semua hal baik mulai datang satu per satu ke hidup ayang. Aku harap ayang selalu sehat, selalu bahagia, dan semua mimpi ayang bisa tercapai.
+Aku pengen ayang tahu kalau ayang itu sangat berharga buat aku. Jangan terlalu keras sama diri sendiri yaa, karena buat aku ayang udah hebat banget sampai bisa bertahan sejauh ini.
+Dan kalau suatu saat dunia terasa berat buat ayang, aku harap ayang tetap ingat kalau ada aku yang bakal selalu ada buat nemenin ayang.
+Aku mungkin ga selalu bisa jadi orang yang terbaik, tapi aku bakal selalu berusaha buat tetap ada di samping ayang dan bikin ayang merasa dicintai.<br><br>
 
-      Kalau suatu saat dunia bikin kamu capek,
-      ingat yaa...
-      aku bakal selalu ada buat kamu.
+Happy Birthday, Aurelia Diningtyas 💛<br>
 
-      I love you,
-      more than words can explain 💛
-    </div>
+Terima kasih karena sudah lahir dan hadir di hidup aku.<br>
+I love you, more than words can explain.
+
+</div>
   </section>
 
   <!-- Programmer Love -->
@@ -453,6 +911,10 @@ console.log("Happy Birthday Aurelia 💛");
       </div>
     </div>
   </section>
-
+  <script>
+function toggleLetter(card){
+  card.classList.toggle("active");
+}
+</script>
 </body>
 </html>
